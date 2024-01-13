@@ -84,7 +84,7 @@ DATABASES = {
        'ENGINE': 'django.db.backends.postgresql',
        'NAME': 'ms18',
        'USER': 'postgres',
-       'PASSWORD': 'CDrKING4GB!',
+       'PASSWORD': 'iPrimexd24',
        'HOST': 'localhost',
        'PORT': '5432',
    }

@@ -60,5 +60,11 @@
                 color: white;
             }
         </style> 
+        
+</div>
+<div class="card-footer text-center">
+    {% if user.is_superuser %}
+    <a href="{% url 'admin:index' %}" class="btn btn-primary">Go to Admin Form</a>
+    {% endif %}
 </div>
 {% endblock content %}

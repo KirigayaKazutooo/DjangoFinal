@@ -50,19 +50,19 @@
 
     <!-- Cart content -->
     <div class="cart-container">
-        <h1>Orders</h1>
+        <h1>Request</h1>
         <a href="{% url 'ms18-home' %}" class="btn btn-primary mb-3">Back to Home</a>
         {% if req_items %}
             <div class="list-group">
                 {% for order in req_items %}
-                    <div class="list-group-item cart-item">
-                        <div>
-                            <span class="font-weight-bold">{{ product.PROD_NAME }}</span>
-                            <span class="badge badge-info">Quantity: {{ RequestedProduct.REQ_PROD_QUANTITY }}</span>
-                            <span>Status: <span class="badge {% if order.REQ_STATUS == 'Approved' %}badge-success{% elif order.REQ_STATUS == 'Rejected' %}badge-danger{% else %}badge-warning{% endif %}">{{ Requisition.REQ_STATUS }}</span></span>
-                        </div>
+                <div class="list-group-item cart-item">
+                    <div>
+                        <span class="font-weight-bold">{{ order.requested_product.product.PROD_NAME }}</span>
+                        <span class="badge badge-info">Quantity: {{ order.requested_product.REQ_PROD_QUANTITY }}</span>
+                        <span class="badge {% if order.status == 'Approved' %}badge-success{% elif order.status == 'Rejected' %}badge-danger{% else %}badge-warning{% endif %}">{{ order.status }}</span>
                     </div>
-                {% endfor %}
+                </div>
+            {% endfor %}
             </div>
         {% else %}
             <p class="empty-cart">No orders.</p>
