@@ -71,4 +71,6 @@ insert into ms18_supplier values ('3', 'Green PC', 'Lapu Lapu Cebu City', '09791
 
 insert into ms18_product values ('1', 'Keyboard', 'LGBT lights', null, '', '200', '10', '1');
 
-requested_products
+C:\Users\frime\OneDrive\Desktop\PGDUMP\ms18.tar
+
+pg_dump -U postgres -W -F t -d ms18 > C:\Users\frime\OneDrive\Desktop\PGDUMP\ms18.tar
