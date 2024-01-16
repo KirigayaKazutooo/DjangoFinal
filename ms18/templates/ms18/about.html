@@ -2,17 +2,15 @@
 {% block content %}
 <head>
     <!-- ... other head elements ... -->
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-rREqp5fV8kqFjliSs3NzoU5S7E9JTK0tr5bRdD5VPTG7Y1d53UENKlOSPVjrS1Fq" crossorigin="anonymous">
-
 </head>
-<div class="d-flex justify-content-center">
-    <form method="post" id="quantityForm" action="/add-to-cart/">
-        {% csrf_token %}
-        <div class="d-flex justify-content-center">
-            <input type="text" class="form-control mb-3" id="searchSupplier" placeholder="Search by Supplier Name">
-            <button type="button" class="btn btn-primary" id="voiceSearchBtn"><i class="fas fa-microphone"></i></button>
 
+<div class="d-flex justify-content-center align-items-center flex-column">
+    <form method="post" id="quantityForm" action="/add-to-cart/" class="mb-3">
+        {% csrf_token %}
+        <div class="input-group">
+            <input type="text" class="form-control" id="searchSupplier" placeholder="Search by Supplier Name">
+            <button type="button" class="btn btn-primary" id="voiceSearchBtn"><i class="fas fa-microphone"></i></button>
         </div>
         <table class="table table-bordered text-center align-middle">
             <thead>
@@ -23,7 +21,7 @@
                     <th scope="col">Quantity</th>
                     <th scope="col">Price</th>
                     <th scope="col">Product Description</th>
-                </tr>   
+                </tr>
             </thead>
             <tbody>
                 {% for product in products %}
