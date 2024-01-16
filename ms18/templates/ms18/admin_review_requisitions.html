@@ -1,0 +1,27 @@
+{% extends 'ms18/base.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h1 class="mb-4">Admin Review Requisitions</h1>
+    {% if pending_requisitions %}
+      <ul class="list-group">
+        {% for requisition in pending_requisitions %}
+          <li class="list-group-item">
+            <h5>Requisition ID: {{ requisition.id }}</h5>
+            <p>Employee: {{ requisition.REQ_EMPLOYEE }}</p>
+            <p>Status: {{ requisition.get_status_display }}</p>
+            <ul>
+              {% for product in requisition.requested_product.all %}
+                <li>{{ product.REQ_PROD_NAME }} - Quantity: {{ product.REQ_PROD_QUANTITY }}</li>
+              {% endfor %}
+            </ul>
+            <a href="{% url 'admin_approve_requisition' requisition.id %}" class="btn btn-success">Approve</a>
+            <a href="{% url 'admin_reject_requisition' requisition.id %}" class="btn btn-danger">Reject</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No pending requisitions.</p>
+    {% endif %}
+  </div>
+{% endblock content %}
