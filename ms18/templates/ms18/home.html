@@ -22,35 +22,22 @@
                     <table class="table table-bordered text-center align-middle">
                         <thead>
                             <tr>
-<<<<<<< HEAD
-                                <th scope="col">Product Name</th>
-=======
                                 <th scope="col">Product Name</th>                    
->>>>>>> 2fca8341db61de77afb006be2367ad46b9e2ff42
                                 <th scope="col">Supplier</th>
                                 <th scope="col">Stock</th>
                                 <th scope="col">Price</th>
                                 <th scope="col">Product Description</th>
-<<<<<<< HEAD
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for product in products %}
-=======
                                 <th scope="col">Supply Status</th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for product in products %}   
->>>>>>> 2fca8341db61de77afb006be2367ad46b9e2ff42
                             <tr>
                                 <td><a href="{% url 'product-detail' product.id %}">{{ product.PROD_NAME }}</a></td>
                                 <td>{{ product.supplier.SUPPLIER_NAME }}</td>
                                 <td>{{ product.PROD_QUANTITY }}</td>
                                 <td>₱{{ product.PROD_PRICE }}</td>
                                 <td>{{ product.PROD_DESCRIPTION }}</td>
-<<<<<<< HEAD
-=======
                                 <td class="{% if product.PROD_QUANTITY < 10 %}verylow
                                            {% elif product.PROD_QUANTITY >= 10 and product.PROD_QUANTITY < 20 %}low
                                            {% elif product.PROD_QUANTITY >= 20 and product.PROD_QUANTITY <= 30 %}high
@@ -66,7 +53,6 @@
                                         Very High    
                                     {% endif %}
                                 </td>
->>>>>>> 2fca8341db61de77afb006be2367ad46b9e2ff42
                             </tr>
                             {% endfor %}
                         </tbody>
@@ -81,8 +67,6 @@
         </div>
     </div>
 </div>
-<<<<<<< HEAD
-=======
 <style>
     .verylow {
         background-color: red;
@@ -104,7 +88,6 @@
         color: white;
     }
 </style>
->>>>>>> 2fca8341db61de77afb006be2367ad46b9e2ff42
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
     $(document).ready(function () {

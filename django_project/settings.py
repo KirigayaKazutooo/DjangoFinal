@@ -84,11 +84,7 @@ DATABASES = {
        'ENGINE': 'django.db.backends.postgresql',
        'NAME': 'ms18',
        'USER': 'postgres',
-<<<<<<< HEAD
        'PASSWORD': 'iPrimexd24',
-=======
-       'PASSWORD': 'cheesecake',
->>>>>>> 2fca8341db61de77afb006be2367ad46b9e2ff42
        'HOST': 'localhost',
        'PORT': '5432',
    }
@@ -148,7 +144,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'frimegwapo@gmail.com'
-EMAIL_HOST_PASSWORD = 'ilgqaimfxjpsbmqa'
-DEFAULT_FROM_EMAIL = 'frimegwapo@gmail.com'
-SERVER_EMAIL = 'frimegwapo@gmail.com'
+EMAIL_HOST_USER = 'johncharltonp@gmail.com'
+EMAIL_HOST_PASSWORD = 'rwdfitmrvxidtybq'
+DEFAULT_FROM_EMAIL = 'johncharltonp@gmail.com'
+SERVER_EMAIL = 'johncharltonp@gmail.com'

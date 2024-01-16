@@ -50,17 +50,6 @@
     <header class="site-header">
 
     </header>
-<<<<<<< HEAD
-
-    <!-- Cart content -->
-    <div class="cart-container">
-        <h1>Orders</h1>
-        <a href="{% url 'ms18-home' %}" class="btn btn-primary mb-3">Back to Inventory</a>
-        {% if cart_items %}
-            <div class="list-group">
-                {% for order in cart_items %}
-                    <div class="list-group-item cart-item">
-=======
         <!-- Cart content -->       
         <div class="cart-container">
             <h1>Orders</h1>
@@ -68,7 +57,6 @@
                 <div class="list-group">
                     {% for order in cart_items %}
                     <div class="cart-item">
->>>>>>> 2fca8341db61de77afb006be2367ad46b9e2ff42
                         <div>
                             <span class="font-weight-bold">{{ order.ORD_NAME }}</span>
                             <span class="badge badge-info">Quantity: {{ order.ORD_QUANTITY }}</span>

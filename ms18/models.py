@@ -20,7 +20,7 @@ class Product(models.Model):
     PROD_QUANTITY = models.IntegerField(default=0)
     PROD_PRICE = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)  
     supplier = models.ForeignKey(Supplier, on_delete=models.CASCADE, null=True, blank=True)
-    awaiting_approval = models.BooleanField(default=False)
+
 
     def __str__(self):
         return self.PROD_NAME
@@ -77,29 +77,6 @@ class Cart(models.Model):
     PurchaseOrder= models.ForeignKey(PurchaseOrder, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
-<<<<<<< HEAD
-        return f"Cart ID: {self.cart_id} - Product: {self.product.PROD_NAME}"
-
-
-
-
-class RequestedProduct(models.Model):
-    REQ_PROD_ID = models.AutoField(primary_key=True)
-    REQ_PROD_QUANTITY = models.IntegerField(default=0)
-    REQ_PROD_DATE_ADDED = models.DateTimeField(default=timezone.now)
-    REQ_PROD_NAME = models.CharField(max_length=100, null=True, blank=True)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    
-    def __str__(self):
-        return f"REQ_PROD ID: {self.REQ_PROD_ID} - Product: {self.product.PROD_NAME}"
-
-class Requisition(models.Model):
-    REQ_ID = models.AutoField(primary_key=True)
-    REQ_NAME = models.CharField(max_length=100)
-    REQ_QUANTITY = models.CharField(max_length=100, default=0)
-    REQ_DESCRIPTION = models.CharField(max_length=200, default='')
-    REQ_EMPLOYEE = models.ForeignKey(User, on_delete=models.CASCADE, default='')
-=======
         return f"Cart ID: {self.CART_ID} - Product: {self.product.PROD_NAME}"
 
 class Requisition(models.Model):
@@ -107,7 +84,6 @@ class Requisition(models.Model):
     REQ_DATE_CREATEDAT = models.DateTimeField(default=timezone.now)
     REQ_EMPLOYEE = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     supplier = models.ForeignKey(Supplier, on_delete=models.CASCADE, null=True, blank=True)
->>>>>>> 2fca8341db61de77afb006be2367ad46b9e2ff42
     APPROVED = 'Approved'
     PENDING = 'Pending'
     REJECTED = 'Rejected'
